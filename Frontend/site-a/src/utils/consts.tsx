@@ -1,0 +1,6 @@
+export const SITE_ROUTE = '/'
+export const PROFILE_ROUTE = '/profile'
+export const SETTINGS_ROUTE = '/settings'
+export const ACHIEVEMENTS_ROUTE = '/achievements'
+export const REGISTRATION_ROUTE = '/registration'
+export const DETAIL_ACHIEVEMENT_ROUTE = '/achievement'

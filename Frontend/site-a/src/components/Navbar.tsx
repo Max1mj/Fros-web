@@ -25,7 +25,8 @@ const Navbar = () => {
 
     document.addEventListener("mousedown", onCLick)
     return () => {
-        document.removeEventListener("mousedown", onCLick)
+       
+      document.removeEventListener("mousedown", onCLick)
     }
   }, []);
 
@@ -49,7 +50,7 @@ const Navbar = () => {
       </div>
 
       {/* Middle */}
-      <div className=" flex align-middle">
+      <div className="flex align-middle ">
         <PageText />
       </div>
       {/* Right */}
