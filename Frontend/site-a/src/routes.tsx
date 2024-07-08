@@ -7,15 +7,18 @@ import {ACHIEVEMENTS_ROUTE, PROFILE_ROUTE, REGISTRATION_ROUTE, SITE_ROUTE} from 
 export const authRoutes = [
     {
         path: SITE_ROUTE,
-        Component: HomePage
+        Component: HomePage,
+        title: "Home"
     },
     {
         path: PROFILE_ROUTE,
-        Component: ProfilePage
+        Component: ProfilePage,
+        title: "Profile"
     },
     {
         path: ACHIEVEMENTS_ROUTE,
-        Component: Achievements
+        Component: Achievements,
+        title: "Achievements"
     },
 
 ]
@@ -23,10 +26,12 @@ export const authRoutes = [
 export const publicRoutes = [
     {
         path: SITE_ROUTE,
-        Component: HomePage
+        Component: HomePage,
+        title: "Home"
     },
     {
         path: REGISTRATION_ROUTE,
-        Component: RegistrationPage
+        Component: RegistrationPage,
+        title: "Register"
     }
 ]
