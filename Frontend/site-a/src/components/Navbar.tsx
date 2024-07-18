@@ -31,16 +31,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-[#181E27] flex items-center justify-between flex-1 h-24">
+    <div className="bg-[#181E27] flex items-center justify-between flex-1 h-24 sticky">
       {/* Left */}
       {/* Sidebar and Playbutton */}
       <div className="flex flex-col">
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 ">
           <SidebarButton
             toggleSidebar={toggleSidebar}
             openedSidebar={openedSidebar}
           />
-          <Playbutton />
+          {/* <Playbutton /> */}
         </div>
         <SidebarContent
           openedSidebar={openedSidebar}

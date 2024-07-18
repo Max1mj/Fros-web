@@ -3,7 +3,7 @@ import Card from './Card';
 
 const GameCollectionPage = () => {
   return (
-    <div className=" h-dvh w-full fixed bg-gradient-to-tr from-[#7c3105] to-[#18496a] p-5">
+    <div className="  w-full h-[calc(100vh-96px)] bg-gradient-to-tr from-[#7c3105] to-[#18496a] p-5">
       <Card/>
     </div>
   );

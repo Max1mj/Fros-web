@@ -1,26 +1,8 @@
 import React, { useState } from "react";
-import { IoHome } from "react-icons/io5";
 import { SidebarProps } from "../types/SidebarProps";
+import { authRoutes } from "../routes";
 
-type SideBarData = {
-  title: string;
-};
-
-const SideData: SideBarData[] = [
-  {
-    title: "Home",
-  },
-  {
-    title: "Profile",
-  },
-];
-
-const SidebarContent: React.FC<SidebarProps> = ({
-  toggleSidebar,
-  openedSidebar,
-  sideRef,
-}) => {
-  const [autLinks, setAutLinks] = useState();
+const SidebarContent: React.FC<SidebarProps> = ({ openedSidebar, sideRef }) => {
   return (
     <aside
       ref={sideRef}
@@ -30,21 +12,26 @@ const SidebarContent: React.FC<SidebarProps> = ({
           : "hidden"
       }`}
     >
-      <button>
-        {SideData.map((item) => (
-          <div className="text-white border h-24 m-2 border-amber-500 flex p-1 items-center">
+      {authRoutes.map((item, key) => (
+        <button
+          key={key}
+          onClick={() => {
+            window.location.pathname = item.path;
+          }}
+        >
+          <div className="text-white border h-24 m-2 border-amber-500 flex p-2 items-center">
             <div className="flex flex-col text-center">
               <div className="w-14 h-14 border rounded-full flex justify-center items-center">
-                <IoHome className="w-8 h-8" />
+                <span className="text-3xl font-semibold">{item.icon}</span>
               </div>
               {item.title}
             </div>
           </div>
-        ))}
-      </button>
+        </button>
+      ))}
     </aside>
   );
 };
 
 export default SidebarContent;
-//want to make it auto, not to typy each time
+//need to add public routes!

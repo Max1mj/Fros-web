@@ -19,3 +19,5 @@ const AppRouter = () => {
 }
 
 export default AppRouter
+
+//need to think about logging logic!
