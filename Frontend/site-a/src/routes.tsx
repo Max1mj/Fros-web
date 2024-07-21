@@ -1,5 +1,5 @@
 import { IoHome } from "react-icons/io5";
-import GameCollectionPage from "./components/GameCollectionPage";
+import GameCollectionPage from "./pages/GameCollectionPage";
 import Achievements from "./pages/Achievements";
 
 import ProfilePage from "./pages/ProfilePage";
@@ -17,13 +17,14 @@ import { CgProfile } from "react-icons/cg";
 import { FaTrophy } from "react-icons/fa6";
 import { SlSettings } from "react-icons/sl";
 import { SiLegacygames } from "react-icons/si";
+import { BiSolidBlanket } from "react-icons/bi";
 import MainPage from "./pages/MainPage";
 
 type SideBarData = {
   title: string;
   icon: React.ReactNode;
   path: string;
-  Component: React.ComponentType<any>
+  Component: React.ComponentType<any>;
 };
 
 export const authRoutes: SideBarData[] = [
@@ -43,36 +44,39 @@ export const authRoutes: SideBarData[] = [
     path: ACHIEVEMENTS_ROUTE,
     Component: Achievements,
     title: "Achievements",
-    icon: <FaTrophy />
+    icon: <FaTrophy />,
   },
   {
     path: SETTINGS_ROUTE,
     Component: SettingsPage,
     title: "Settings",
-    icon: <SlSettings />
+    icon: <SlSettings />,
   },
   {
     path: GAME_COLLECTION_ROUTE,
     Component: GameCollectionPage,
     title: "Games",
-    icon: <SiLegacygames/>
+    icon: <SiLegacygames />,
   },
 ];
 
-export const publicRoutes = [
+export const publicRoutes: SideBarData[] = [
   {
     path: SITE_ROUTE,
     Component: MainPage,
     title: "Main",
+    icon: <IoHome />,
   },
   {
     path: REGISTRATION_ROUTE,
     Component: RegistrationPage,
     title: "Register",
+    icon: <BiSolidBlanket/>
   },
   {
     path: GAME_COLLECTION_ROUTE,
     Component: GameCollectionPage,
     title: "Games",
+    icon: <SiLegacygames />,
   },
 ];

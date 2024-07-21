@@ -1,0 +1,6 @@
+progress::-webkit-progress-bar {
+    background-color: #636060; /* Background color of the progress bar */
+}
+progress::-webkit-progress-value {
+    background-color: #f09a06; /* Color of the progress indicator */
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import PageText from "./PageText";
 import LogInButton from "./LogInButton";
 import SidebarButton from "./SidebarButton";
@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   const sideRef = useRef<HTMLDivElement>(null);
-//   bug if click nearby to button to close(after closing automatically opens)
+  //   bug if click nearby to button to close(after closing automatically opens)
   useEffect(() => {
     const onCLick = (e: MouseEvent) => {
       if (sideRef.current == null) return;
@@ -23,11 +23,10 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", onCLick)
+    document.addEventListener("mousedown", onCLick);
     return () => {
-       
-      document.removeEventListener("mousedown", onCLick)
-    }
+      document.removeEventListener("mousedown", onCLick);
+    };
   }, []);
 
   return (
@@ -42,6 +41,7 @@ const Navbar = () => {
           />
           {/* <Playbutton /> */}
         </div>
+
         <SidebarContent
           openedSidebar={openedSidebar}
           toggleSidebar={toggleSidebar}

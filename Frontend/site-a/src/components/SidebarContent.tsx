@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SidebarProps } from "../types/SidebarProps";
-import { authRoutes } from "../routes";
+import { authRoutes, publicRoutes } from "../routes";
+import { AuthContext } from "../App";
+
+ 
 
 const SidebarContent: React.FC<SidebarProps> = ({ openedSidebar, sideRef }) => {
+  const isAuth = useContext(AuthContext)
+  const renderedRoutes = isAuth ? authRoutes : publicRoutes
   return (
     <aside
       ref={sideRef}
@@ -12,12 +17,12 @@ const SidebarContent: React.FC<SidebarProps> = ({ openedSidebar, sideRef }) => {
           : "hidden"
       }`}
     >
-      {authRoutes.map((item, key) => (
+      {renderedRoutes.map((item, key) => (
         <button
           key={key}
           onClick={() => {
             window.location.pathname = item.path;
-          }}
+          }} 
         >
           <div className="text-white border h-24 m-2 border-amber-500 flex p-2 items-center">
             <div className="flex flex-col text-center">
